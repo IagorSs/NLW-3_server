@@ -4,3 +4,5 @@ build/
 uploads/*
 
 !*.gitkeep
+
+*.sqlite

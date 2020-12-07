@@ -19,9 +19,9 @@ export default {
     try {
       const { id } = req.params;
   
-      const orphanagesRepositoy = getRepository(Orphanage);
+      const orphanagesRepository = getRepository(Orphanage);
   
-      const orphanage = await orphanagesRepositoy.findOneOrFail(id, {
+      const orphanage = await orphanagesRepository.findOneOrFail(id, {
         relations: ['images']
       });
   
@@ -79,7 +79,7 @@ export default {
 
     await schema.validate(data, {
       abortEarly: false,
-    })
+    });
 
     const orphanage = orphanagesRepository.create(data);
 
